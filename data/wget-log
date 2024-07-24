@@ -1,0 +1,11 @@
+--2024-07-22 23:01:25--  https://cloud.tsinghua.edu.cn/d/d6f9966d6b684b05a516/files/?p=%2Fwiki-zh-subset-train_subset.jsonl
+Resolving cloud.tsinghua.edu.cn (cloud.tsinghua.edu.cn)... 166.111.6.101, 2402:f000:1:406:166:111:6:101
+Connecting to cloud.tsinghua.edu.cn (cloud.tsinghua.edu.cn)|166.111.6.101|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 6543 (6.4K) [text/html]
+Saving to: ‘index.html?p=%2Fwiki-zh-subset-train_subset.jsonl’
+
+                   index.html?p=%2Fwik   0%[                                                                           ]       0  --.-KB/s               index.html?p=%2Fwiki-zh-subset-train_s 100%[==========================================================================>]   6.39K  --.-KB/s    in 0s      
+
+2024-07-22 23:01:26 (5.11 GB/s) - ‘index.html?p=%2Fwiki-zh-subset-train_subset.jsonl’ saved [6543/6543]
+
