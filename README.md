@@ -49,3 +49,37 @@ python sample.py --out_dir=[/dir/to/training/output] --save_path=/path/to/save/o
 - `--out_dir`参数指定使用的模型权重的目录（由模型训练过程生成）。
 - `--save_path`参数指定生成文本的保存路径，不设置则不保存仅打印。
 - `--start`参数可以设置指导模型生成的prompt。可以在`prompts.txt`文件中逐行给出输入的各个prompt
+
+## 最终文件结构
+
+.
+├── README.md
+├── arena.py
+├── config
+│   ├── sft_config.py
+│   └── train_config.py
+├── configurator.py
+├── data
+│   ├── download.sh
+│   ├── merge.py
+│   ├── prepare.py
+│   ├── prepare.sh
+│   ├── prepare_sft.py
+│   ├── sft_data
+│   │   ├── generate.py
+│   │   └── generate.sh
+│   ├── sft_data_aug
+│   │   ├── gen.py
+│   │   ├── gen1.py
+│   │   ├── gen2.py
+│   │   ├── gen3.py
+│   │   └── json_to_qa.py
+│   └── update.py
+├── data_utils.py
+├── evaluations.py
+├── generate_answer.py
+├── model.py
+├── sample.py
+├── sample_gradio.py
+├── train.py
+└── visualize.py
