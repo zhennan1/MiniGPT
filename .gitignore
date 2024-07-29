@@ -166,5 +166,6 @@ out*/
 *.pt
 
 data/*.jsonl
+data/*/*.jsonl
 2021030014.jsonl
 测试集-day1.jsonl
