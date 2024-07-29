@@ -52,6 +52,7 @@ python sample.py --out_dir=[/dir/to/training/output] --save_path=/path/to/save/o
 
 ## 最终文件结构
 
+```
 .
 ├── README.md
 ├── arena.py
@@ -83,3 +84,4 @@ python sample.py --out_dir=[/dir/to/training/output] --save_path=/path/to/save/o
 ├── sample_gradio.py
 ├── train.py
 └── visualize.py
+```
