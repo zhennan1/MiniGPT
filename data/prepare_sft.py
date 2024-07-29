@@ -38,8 +38,8 @@ train_ids = np.array(enc.encode_ordinary(train_data), dtype=np.uint16)
 val_ids = np.array(enc.encode_ordinary(val_data), dtype=np.uint16)
 
 # Create a directory to save the processed data if it doesn't already exist
-os.makedirs("processed_sft", exist_ok=True)
+os.makedirs("processed_sft_mix_update", exist_ok=True)
 
 # Save the numpy arrays to binary files
-train_ids.tofile(os.path.join("processed_sft", "train.bin"))
-val_ids.tofile(os.path.join("processed_sft", 'val.bin'))
+train_ids.tofile(os.path.join("processed_sft_mix_update", "train.bin"))
+val_ids.tofile(os.path.join("processed_sft_mix_update", 'val.bin'))

@@ -258,3 +258,35 @@ class MiniGPT(nn.Module):
             idx = torch.cat((idx, idx_next), dim=1)
 
         return idx
+
+
+    def generate_with_probs(self, idx, max_new_tokens, temperature=1.0, top_k=None):
+        """
+        Generate text and return the probabilities at each step.
+        :param model: 模型
+        :param idx: 初始输入
+        :param max_new_tokens: 生成的最大token数量
+        :param temperature: 温度参数
+        :param top_k: top_k采样
+        :return: 生成的tokens及对应的概率
+        """
+        probs = []
+
+        for _ in range(max_new_tokens):
+            idx_cond = idx if idx.size(1) <= self.config.block_size else idx[:, -self.config.block_size:]
+            logits, _ = self(idx_cond)
+            logits = logits[:, -1, :] / temperature
+            
+            if top_k is not None:
+                v, _ = torch.topk(logits, min(top_k, logits.size(-1)))
+                logits[logits < v[:, [-1]]] = -float('Inf')
+            
+            prob = F.softmax(logits, dim=-1)
+            idx_next = torch.multinomial(prob, num_samples=1)
+            
+            idx = torch.cat((idx, idx_next), dim=1)
+            
+            # 保存每一步的概率分布
+            probs.append(prob[0, idx_next.item()].item())
+
+        return idx, torch.tensor(probs)
